@@ -1,32 +1,36 @@
 ---
 import MainButton from '../components/MainButton.astro';
 import SecondaryButton from '../components/SecondaryButton.astro';
-
-
 ---
 
 <nav class="menu">
     <div class="logo">
-        <img src="logo.png" alt="Logo">
+        <img src="/public/img/logo1.png" alt="Logo">
     </div>
     <div class="menu-buttons">
-        <MainButton>
-        <MainButton>
-            <SecondaryButton>
+        <MainButton>Om os</MainButton>
+        <MainButton>Tryllekunstnere</MainButton>
+        <SecondaryButton>Donér</SecondaryButton>
     </div>
 </nav>
-
+<hr style="width: 1400px; border: 0; border-top: 1px solid #000; margin: 0 auto; opacity: 0.4;">
 <style>
     .menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 15px;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
     }
     .logo img {
-        height: 50px;
-        width: 50px;
+        width: 80%;
+        left: 0px;
     }
+
+    .menu-buttons {
+    display: flex;
+    gap: 20px; /* Adjusts space between buttons */
+}
+
     </style>

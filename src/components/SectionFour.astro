@@ -1,0 +1,41 @@
+---
+import SecondaryButton from '../components/SecondaryButton.astro';
+---
+<div class="grid_1-1">
+<div>
+<img src="/public/img/hatogstav.png" alt="hat">
+</div>
+<div class="sectionfourtext">
+<h1>For kun 10 kroner</h1>
+<p>Kan du hjælpe med at skabe magi. Med din donation, kan vi skabe øjeblikke, hvor sygdom og bekymringer træder i baggrunden, og hvor fantasien og smilet for lov at blomstre. 
+</p>
+<br>
+<SecondaryButton>Støt nu →</SecondaryButton>
+</div>
+</div>
+<img src="/public/img/quote.png" alt="quote">
+
+<style>
+    img {
+        width: 100%;
+    }
+
+    .grid_1-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .sectionfourtext {
+    text-align: center; 
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    width: 60ch;
+}
+
+
+
+</style>

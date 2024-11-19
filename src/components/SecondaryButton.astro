@@ -1,0 +1,21 @@
+<button class="mainbutton"><slot/></button>
+
+<style>
+    .mainbutton {
+        border: 1px solid #E56F00;
+        background: #E56F00;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        color: #FFFDEF;
+        font-weight: lighter;
+        font-size: 1rem;
+
+    }
+    .mainbutton:hover {
+        background-color: #FFFDEF;
+        color: #E56F00;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+</style>
