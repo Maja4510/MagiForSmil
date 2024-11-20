@@ -23,26 +23,46 @@ import SectionSix from "../components/SectionSix.astro";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="/src/pages/styles/style.css">
 		
 	</head>
 
 </html>
 
+<div class="header">
+	<div class="progress-container">
+	  <div class="progress-bar" id="myBar"></div>
+	</div>
+  </div>
 
-<Menu></Menu>
-<SectionOne></SectionOne>
-<Section2></Section2>
-	<Section3></Section3>
 
-    <SectionFour></SectionFour>
-        <SectionFive></SectionFive>
-		<SectionSix></SectionSix>
+  <Menu></Menu>
+  <SectionOne></SectionOne>
+  <Section2></Section2>
+	  <Section3></Section3>
+  
+	  <SectionFour></SectionFour>
+		  <SectionFive></SectionFive>
+		  <SectionSix></SectionSix>
+  
+		  <Section7></Section7>
+  
+			  <SectionEight></SectionEight>
+			  <Footer></Footer>
 
-		<Section7></Section7>
+			<script>
+				// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
 
-            <SectionEight></SectionEight>
-            <Footer></Footer>
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+			</script>
+
+
 
 	
 

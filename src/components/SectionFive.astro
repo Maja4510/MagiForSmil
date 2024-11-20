@@ -5,23 +5,23 @@
 
 <div class="grid_1-1-1-1">
 <div>
-<img src="/public/img/heart1.png" alt="heart1">
+<img src="/public/img/heart1.png" alt="heart1" class="heart">
 <h2>Glæde</h2>
 <p>Glæde i en hård tid, og sygdommen kan få lov at træde i baggrunden for en stund.</p>
 </div>
 <div>
-<img src="/public/img/heart2.png" alt="heart2">
+<img src="/public/img/heart2.png" alt="heart2" class="heart">
 <h2>Rummelighed</h2>
 <p>Vi rummer alle behov og ønsker - både på og undenfor hospitalerne.</p>
 </div>
 <div>
-<img src="/public/img/heart3.png" alt="heart3">
+<img src="/public/img/heart3.png" alt="heart3" class="heart">
 <h2>Nærvær</h2>
 <p>Når sygdommen splitter, bringer vi, med vores magiske oplevelser, nærværet tilbage.
 </p>
 </div>
 <div>
-<img src="/public/img/heart4.png" alt="heart4">
+<img src="/public/img/heart4.png" alt="heart4" class="heart">
 <h2>Hjertevarme</h2>
 <p>Empati og tæthed gør at det er oprigtige og hjertelige følelser.</p>
 </div>
@@ -82,6 +82,26 @@ line-height: 160%; /* 25.6px */
 text-align: center;
 
 }
+
+/* Keyframes för pulserande effekt */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Normal storlek */
+    }
+    50% {
+        transform: scale(1.09); /* Förstora något */
+    }
+    100% {
+        transform: scale(1); /* Tillbaka till normal storlek */
+    }
+}
+
+/* Applicera animationen på alla bilder med klassen "heart" */
+.heart {
+    animation: pulse 2.5s infinite; /* Animationen körs oändligt */
+    transition: transform 0.3s ease-in-out; /* Jämn övergång */
+}
+
 
 
 

@@ -21,7 +21,7 @@ Med vores tryllestave og magiske kufferter forvandler vi sterile hospitalsgange 
 
 
 <div class="grid-item_3">
-    <img src="/public/img/ellipse.png" alt="ellipse billede">
+    <img src="/public/img/ellipse.png" alt="ellipse billede" class="ellipse">
 </div>
 
 </section>
@@ -81,4 +81,36 @@ button {
 margin-left: 30%;
 }
 
+.ellipse {
+    opacity: 0;
+    transform: translateY(20px); /* Flytta dem något nedåt för en snyggare effekt */
+    transition: opacity 4s ease, transform 4s ease;
+}
+
+/* När klassen "visible" läggs till */
+.visible {
+    opacity: 1;
+    transform: translateY(0); /* Flytta tillbaka till sin ursprungliga position */
+}
+
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.ellipse'); // Hämta alla bilder
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible'); // Lägg till klassen "visible" när synlig
+                observer.unobserve(entry.target); // Sluta observera efter att den blivit synlig
+            }
+        });
+    }, {
+        threshold: 0.4 // Tröskel för när den ska aktiveras (10% synlig)
+    });
+
+    images.forEach(img => observer.observe(img)); // Börja observera varje bild
+});
+
+</script>

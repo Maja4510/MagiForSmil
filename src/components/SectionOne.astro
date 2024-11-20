@@ -2,7 +2,7 @@
                 <h1 class="herotext"><span style="color: #E56F00">Hver dag</span> kæmper mange børn med sygdom og lange hospitalsophold. </h1>
         <h2 class="herotext2">Vi tryller for håbet om smil.</h2>
 
-        <video autoplay muted loop class="herovid">
+        <video muted loop class="herovid blurred" id="heroVideo">
             <source src="/public/img/herovid.mp4" type="video/mp4">
         </video>
 
@@ -56,5 +56,35 @@ margin-bottom: 74px;
     padding: 0;
 }
 
+.herovid.blurred {
+    filter: blur(3px);
+    transition: filter 20s ease-in-out; /* Exempel med längre mjuk övergång */
+}
+
+
+
+
 
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('heroVideo');
+    let hasScrolled = false;
+
+    // Lyssna på scroll-händelsen
+    window.addEventListener('scroll', () => {
+        if (!hasScrolled) { // Kontrollera om scroll redan har skett
+            hasScrolled = true; // Sätt flagga för att undvika flera uppspelningar
+            
+            // Fördröj starten av blur-reduceringen
+            setTimeout(() => {
+                video.play(); // Spela upp videon
+                video.classList.remove('blurred'); // Ta bort blur-effekten
+            }, 500); 
+        }
+    });
+});
+
+
+</script>

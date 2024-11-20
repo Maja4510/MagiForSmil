@@ -3,18 +3,18 @@
 
 <div class="grid-container_s7">
     <div class="grid-item_7">
-      <h2>9/10</h2>
+      <h2 data-target="9" data-suffix="/10">0</h2>
       <p>Hospitaler forklarer hvordan de oplever en betydelig hurtigere bedring blandt børn og familier, der har modtaget hjælp af magi for smil.</p>
     </div>
 
 
  <div class="grid-item_7">
-      <h2>6000</h2>
+  <h2 data-target="6000">0</h2>
       <p>Er det antal af familier med syge børn, der gennem magi for smil's arbejde oplevede glæde, smil og ægte trylleri i 2023.</p>
     </div>
 
 <div class="grid-item_7">
-      <h2>97%</h2>
+  <h2 data-target="97" data-suffix="%">0</h2>
       <p>Af alle familier, der har modtaget hjælp af magi for smil, mener at det har været en uundværlig del for at skabe glæde i en ellers svær tid.</p>
     </div>
 
@@ -80,3 +80,41 @@ max-width: 60%;
 
 
   </style>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('h2[data-target]'); // Hämta alla h2 med data-target
+    const speed = 100; // Justera hastigheten på upp-räkningen
+
+    const countUp = (element) => {
+        const target = +element.getAttribute('data-target'); // Hämta måltalet
+        const suffix = element.getAttribute('data-suffix') || ''; // Hämta suffix, om det finns
+        const current = +element.innerText.replace(suffix, ''); // Läs nuvarande värde
+        const increment = Math.ceil(target / speed); // Räkna ut hur mycket som ska ökas
+
+        if (current < target) {
+            element.innerText = current + increment + suffix; // Uppdatera värdet
+            setTimeout(() => countUp(element), 20); // Rekursivt anropa funktionen
+        } else {
+            element.innerText = target + suffix; // Säkerställ att det landar exakt på målet
+        }
+    };
+
+    // Skapa Intersection Observer
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                countUp(entry.target); // Starta räkning
+                observer.unobserve(entry.target); // Sluta observera efter räkningen
+            }
+        });
+    }, {
+        threshold: 0.1 // Aktivera när 10% av elementet är synligt
+    });
+
+    // Observera varje räknare
+    counters.forEach(counter => observer.observe(counter));
+});
+
+
+  </script>
