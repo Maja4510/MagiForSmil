@@ -9,21 +9,27 @@ import SecondaryButton from '../components/SecondaryButton.astro';
             <img src="/public/img/logo1.png" alt="Logo" id="logoImg">
         </div>
         <div class="menu-buttons">
-            <div id="aboutBtn">
+            <div id="omos">
                 <MainButton>Om os</MainButton>
             </div>
-            <div id="magicianBtn">
+            <div id="trylle">
                 <MainButton>Tryllekunstnere</MainButton>
             </div>
-            <div id="donateBtn">
+            <div id="doner">
                 <SecondaryButton>Donér</SecondaryButton>
             </div>
+            
         </div>
+
     </nav>
-<hr style="width: 1400px; border: 0; border-top: 1px solid #000; margin: 0 auto; opacity: 0.4;">
+
+    <hr style="width: 1400px; border: 0; border-top: 1px solid #000; margin: 0 auto; opacity: 0.4;">
+
 </div>
 
+
 <style>
+
 
 .menu-container {
         position: fixed;
@@ -32,6 +38,8 @@ import SecondaryButton from '../components/SecondaryButton.astro';
         right: 0;
         background: white; /* eller den bakgrundsfärg du vill ha */
         z-index: 1000; /* Säkerställer att menyn ligger över annat innehåll */
+        background-color: #FFFDEF;
+
     }
     .menu {
         display: flex;
@@ -72,4 +80,39 @@ import SecondaryButton from '../components/SecondaryButton.astro';
             });
         }
     });
+    document.addEventListener('DOMContentLoaded', () => {
+    const omos = document.getElementById('omos');
+    if (omos) {
+        omos.addEventListener('click', () => {
+            window.scrollTo({
+                top: 1150, // Scrolla alltid till 200px från toppen
+                behavior: 'smooth' // Mjuk scroll
+            });
+        });
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const trylle = document.getElementById('trylle');
+    if (trylle) {
+        trylle.addEventListener('click', () => {
+            window.scrollTo({
+                top: 2650, // Scrolla alltid till 200px från toppen
+                behavior: 'smooth' // Mjuk scroll
+            });
+        });
+    }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const doner = document.getElementById('doner');
+    if (doner) {
+        doner.addEventListener('click', () => {
+            window.scrollTo({
+                top: 6400, // Scrolla alltid till 200px från toppen
+                behavior: 'smooth' // Mjuk scroll
+            });
+        });
+    }
+});
     </script>

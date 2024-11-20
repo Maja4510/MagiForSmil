@@ -1,8 +1,12 @@
 
+---
+import MainButton from '../components/MainButton.astro';
+---
+
 <section class="magi-for-smil">
   <h1 class="section3_h1">Hvordan vi skaber magi</h1>
 
-<hr style="width: 1200px; border: 0; border-top: 1px solid #000; margin: 0 auto; opacity: 0.4;">
+  <hr style="width: 1400px; border: 0; border-top: 1px solid #000; margin: 0 auto; opacity: 0.4;">
  
 <div class="grid-container_s3">
     <div class="grid-item_3">
@@ -10,7 +14,9 @@
 At bringe <span class="highlight">magi, latter og glæde</span>  til børneafdelinger på hospitaler over hele landet. <br> <br>
 Med vores tryllestave og magiske kufferter forvandler vi sterile hospitalsgange til fortryllende verdener fyldt med undren og begejstring.</p>
 <br><br>
-<button>Mød vores tryllekunstnere her →</button>   
+<div class="padding">
+<MainButton>Mød vores tryllekunstnere her →</MainButton>
+</div>
 </div>
 
 
@@ -23,9 +29,15 @@ Med vores tryllestave og magiske kufferter forvandler vi sterile hospitalsgange 
 
 <style>
 
+
+  .padding {
+    padding-left: 15%;
+  }
+
 .section3_h1 {
  color: #000;
-margin-left: 8%;
+margin-left: 5%;
+padding-top: 3%;
 font-family: IonicMTW04-Regular;
 font-size: 42px;
 font-style: normal;
@@ -53,9 +65,9 @@ display: grid;
 
 .grid-item_3 p {
  color: #000;
-text-align: center;
+text-align: left;
 font-family: "Helvetica Neue";
-font-size: 16px;
+font-size: 18px;
 font-style: normal;
 font-weight: 300;
 line-height: 160%; /* 25.6px */

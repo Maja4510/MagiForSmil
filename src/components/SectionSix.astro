@@ -1,0 +1,71 @@
+<div class="grid_1x4">
+<img src="/public/img/instagram1.png" alt="instagram1">
+<video autoplay muted loop class="instavid">
+    <source src="/public/img/instagram2.mp4" type="video/mp4">
+</video><img src="/public/img/instagram3.png" alt="instagram3">
+<img src="/public/img/instagram4.png" alt="instagram4">
+</div>
+
+<div class="igtext">
+<div class="text-with-image">
+    <p>Se mere fra vores hverdag</p>
+
+    <img src="/public/img/igsymbol.png" alt="Instagram Symbol" class="igsymbol" />
+</div>
+</div>
+
+<style>
+
+body {
+    overflow-x: hidden;
+}
+
+
+
+.text-with-image {
+    display: flex;
+    align-items: center; /* Vertikal centrering om bilden och texten är olika höga */
+    padding-top: 20px;
+    padding-bottom: 40px;
+    cursor: pointer;
+    
+}
+.igtext {
+position: absolute;
+right: -4%;
+}
+
+.text-with-image p {
+    margin: 0; /* Ta bort eventuell extra marginal runt texten */
+    padding-right: 10px; /* Lägg till lite mellanrum mellan texten och bilden */
+}
+
+    img {
+        width: 100%;
+    }
+
+    .igsymbol {
+        width: 9%;
+    }
+
+    video {
+        width: 100%;
+    }
+    .grid_1x4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        padding-left: 20px;
+        cursor: pointer;
+
+    }
+
+    p {
+        color: #E56F00;
+font-family: "Helvetica Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 160%;
+    }
+</style>

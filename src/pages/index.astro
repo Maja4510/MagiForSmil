@@ -1,4 +1,18 @@
 ---
+import Menu from '../components/Menu.astro';
+import SectionOne from '../components/SectionOne.astro';
+import MainButton from '../components/MainButton.astro';
+import SecondaryButton from '../components/SecondaryButton.astro';
+import SectionFour from '../components/SectionFour.astro'
+import SectionFive from '../components/SectionFive.astro'
+import SectionEight from '../components/SectionEight.astro'
+import Footer from '../components/Footer.astro'
+import Section2 from "../components/Section2.astro";
+import Section3 from "../components/Section3.astro";
+import Section7 from "../components/Section7.astro";
+import SectionSix from "../components/SectionSix.astro";
+
+
 
 ---
 
@@ -9,9 +23,26 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<link rel="stylesheet" href="style.css">
+		
 	</head>
-	
-	<body>
-		<h1>Astro</h1>
-	</body>
+
 </html>
+
+
+<Menu></Menu>
+<SectionOne></SectionOne>
+<Section2></Section2>
+	<Section3></Section3>
+
+    <SectionFour></SectionFour>
+        <SectionFive></SectionFive>
+		<SectionSix></SectionSix>
+
+		<Section7></Section7>
+
+            <SectionEight></SectionEight>
+            <Footer></Footer>
+
+	
+

@@ -1,0 +1,16 @@
+
+
+   * {
+    background-color: #FFFDEF;
+    margin: 0;
+    padding: 0;
+    max-width: 1300px;
+    
+
+   }
+
+  html, body {
+    overflow-x: hidden; /* Döljer horisontell scroll */
+    margin: 0; /* Tar bort oönskade marginaler */
+    padding: 0; /* Tar bort oönskade padding */
+}

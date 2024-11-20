@@ -7,15 +7,18 @@ import SecondaryButton from '../components/SecondaryButton.astro';
 </div>
 <div class="sectionfourtext">
 <h1>For kun 10 kroner</h1>
-<p>Kan du hjælpe med at skabe magi. Med din donation, kan vi skabe øjeblikke, hvor sygdom og bekymringer træder i baggrunden, og hvor fantasien og smilet for lov at blomstre. 
+<p>Kan du hjælpe med at <span class="highlight">skabe magi.</span> Med din donation, kan vi skabe øjeblikke, hvor sygdom og bekymringer træder i baggrunden, og hvor fantasien og <span class="highlight">smilet</span> for lov at blomstre. 
 </p>
 <br>
+<div id="stot">
 <SecondaryButton>Støt nu →</SecondaryButton>
+</div>
 </div>
 </div>
 <img src="/public/img/quote.png" alt="quote">
 
 <style>
+
     img {
         width: 100%;
     }
@@ -35,6 +38,35 @@ import SecondaryButton from '../components/SecondaryButton.astro';
     justify-content: center; 
     width: 60ch;
 }
+
+h1 {
+    color: #000;
+   margin-left: 8%;
+   font-family: IonicMTW04-Regular;
+   font-size: 42px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 120%; /* 50.4px */
+   }
+   
+   p {
+    color: #000;
+text-align: center;
+font-family: "Helvetica Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 300;
+line-height: 160%; /* 25.6px */
+   }
+    .highlight {
+color: #E56F00;
+font-family: "Helvetica Neue";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 160%;
+}
+   
 
 
 img {
@@ -62,7 +94,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.5
+    threshold: 0.2
 });
 
 // Observera endast hat-bilden
@@ -70,6 +102,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const hatImage = document.querySelector('.hat'); // eller '#hat' om du använder ID
     if (hatImage) {
         observer.observe(hatImage);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const stot = document.getElementById('stot');
+    if (stot) {
+        stot.addEventListener('click', () => {
+            window.scrollTo({
+                top: 6400, // Scrolla alltid till 200px från toppen
+                behavior: 'smooth' // Mjuk scroll
+            });
+        });
     }
 });
 </script>
