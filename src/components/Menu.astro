@@ -2,19 +2,37 @@
 import MainButton from '../components/MainButton.astro';
 import SecondaryButton from '../components/SecondaryButton.astro';
 ---
+<div class="menu-container">
 
-<nav class="menu">
-    <div class="logo">
-        <img src="/public/img/logo1.png" alt="Logo">
-    </div>
-    <div class="menu-buttons">
-        <MainButton>Om os</MainButton>
-        <MainButton>Tryllekunstnere</MainButton>
-        <SecondaryButton>Donér</SecondaryButton>
-    </div>
-</nav>
+    <nav class="menu">
+        <div class="logo">
+            <img src="/public/img/logo1.png" alt="Logo" id="logoImg">
+        </div>
+        <div class="menu-buttons">
+            <div id="aboutBtn">
+                <MainButton>Om os</MainButton>
+            </div>
+            <div id="magicianBtn">
+                <MainButton>Tryllekunstnere</MainButton>
+            </div>
+            <div id="donateBtn">
+                <SecondaryButton>Donér</SecondaryButton>
+            </div>
+        </div>
+    </nav>
 <hr style="width: 1400px; border: 0; border-top: 1px solid #000; margin: 0 auto; opacity: 0.4;">
+</div>
+
 <style>
+
+.menu-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white; /* eller den bakgrundsfärg du vill ha */
+        z-index: 1000; /* Säkerställer att menyn ligger över annat innehåll */
+    }
     .menu {
         display: flex;
         justify-content: space-between;
@@ -24,9 +42,14 @@ import SecondaryButton from '../components/SecondaryButton.astro';
         margin: 0 auto;
     }
     .logo img {
-        width: 80%;
+        width: 13%;
         left: 0px;
     }
+
+    .logo {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
 
     .menu-buttons {
     display: flex;
@@ -34,3 +57,19 @@ import SecondaryButton from '../components/SecondaryButton.astro';
 }
 
     </style>
+
+
+   <script>
+    // Väntar tills DOM är laddad
+    document.addEventListener('DOMContentLoaded', () => {
+        const logoImg = document.getElementById('logoImg');
+        if (logoImg) {
+            logoImg.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+    </script>

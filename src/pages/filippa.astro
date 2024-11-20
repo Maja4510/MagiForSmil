@@ -5,12 +5,32 @@ import MainButton from '../components/MainButton.astro';
 import SecondaryButton from '../components/SecondaryButton.astro';
 import SectionFour from '../components/SectionFour.astro'
 import SectionFive from '../components/SectionFive.astro'
+import SectionEight from '../components/SectionEight.astro'
+import Footer from '../components/Footer.astro'
 
 
 ---
 
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+
+</html>
+
+
 <Menu></Menu>
 <SectionOne></SectionOne>
     <SectionFour></SectionFour>
-        <SectionFive>
+        <SectionFive></SectionFive>
+            <SectionEight></SectionEight>
+            <Footer></Footer>
 
+    
+
+        
