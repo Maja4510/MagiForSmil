@@ -1,0 +1,79 @@
+---
+import SecondaryButton from '../components/SecondaryButton.astro';
+---
+<div class="grid_1-1">
+<div>
+<img src="/public/img/hatogstav.png" alt="hat" class="hat">
+</div>
+<div class="sectionfourtext">
+<h1>For kun 10 kroner</h1>
+<p>Kan du hjælpe med at skabe magi. Med din donation, kan vi skabe øjeblikke, hvor sygdom og bekymringer træder i baggrunden, og hvor fantasien og smilet for lov at blomstre. 
+</p>
+<br>
+<SecondaryButton>Støt nu →</SecondaryButton>
+</div>
+</div>
+<img src="/public/img/quote.png" alt="quote">
+
+<style>
+    img {
+        width: 100%;
+    }
+
+    .grid_1-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .sectionfourtext {
+    text-align: center; 
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    width: 60ch;
+}
+
+
+img {
+    width: 100%;
+}
+
+/* Endast hat-bilden får fade-effekten */
+.hat {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+
+.fade-in {
+    opacity: 1;
+}
+</style>
+
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.5
+});
+
+// Observera endast hat-bilden
+document.addEventListener('DOMContentLoaded', () => {
+    const hatImage = document.querySelector('.hat'); // eller '#hat' om du använder ID
+    if (hatImage) {
+        observer.observe(hatImage);
+    }
+});
+</script>
+
+
+
+</style>

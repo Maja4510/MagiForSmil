@@ -1,0 +1,59 @@
+<div class="container">
+    <img src="/public/img/section8.png" alt="section8" class="background-image">
+    <div class="overlay">
+        <h1>Støt allerede i dag</h1>
+        <p>Med et vilkårligt beløb, og vær med til at give syge og sårbare børn magiske stunder og glimt af glæde og smil.</p>
+        <img src="/public/img/pig.png" alt="pig" class="pig">
+    </div>
+</div>
+
+<style>
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+}
+
+.overlay {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+    .pig {
+    width: 17%;
+    margin-top: 20px;
+    animation: bounce 2s infinite ease-in-out;
+    cursor: pointer;
+
+}
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+</style>
